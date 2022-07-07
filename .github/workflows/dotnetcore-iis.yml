@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.100
+        dotnet-version: 6.0.100
     
     # dotnet build and publish
     - name: Build with dotnet
@@ -34,7 +34,7 @@ jobs:
         iisreset /start
     
     - name: Curl the website as a smoke test
-      run: curl http://localhost/dotnetcore-webapp
+      run: curl http://localhost:8060
 
     - name: Run Web Test
       run: |
